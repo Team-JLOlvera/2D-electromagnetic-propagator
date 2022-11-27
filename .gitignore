@@ -1,0 +1,14 @@
+# Byte-compiled
+__pycache__/
+
+#files:
+reports/
+data/
+*.txt
+*.csv
+*.npy
+# packaging
+dist/
+sdist/
+*.egg-info/
+*.egg

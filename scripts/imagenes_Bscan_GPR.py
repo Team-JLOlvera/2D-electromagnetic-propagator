@@ -109,10 +109,37 @@ if __name__ == '__main__':
     'posicion_antena_recepcion_y' : 50      
      }
 
+
+     
+    model_features = {
+        'discretization_x': 0.01, # meters
+        'model_size_in_x': 100, # points
+        'model_size_in_y': 60, #points
+        'position_TX_y': 50, #points
+        'position_TX_x': 10,  #points
+        'position_RX_y': 50, #points
+        'position_RX_x': 14, #points
+    }
+
+
+    waveform_characteristics = {
+        'frequency': 1.6e9, #Hz
+        'type': 'ricker'
+
+    }
+
     # ===============================================================================================
     # 2) parametros de la simulacion 
 
     parametros_simulacion = {'pasos_de_la_antena' : 80, 'ventana_tiempo': 420}
+
+    simulation_parameters = {
+        'antenna_steps': 80,
+        'time_window': 420
+
+
+    }
+
 
     # ===============================================================================================
     # 3) forma de onda utilizar 
@@ -127,6 +154,13 @@ if __name__ == '__main__':
     'permitividad_relativa': 6
     }
 
+    dict_box = {
+        'type' : 'box',
+        'location_at_x': 0, #points
+        'location_at_y': 50, #points
+        'conductivity': 0,  #s/m
+        'relative permittivity': 6 
+    }
     nombre_objeto_2 = 'cilindro'
     caracteristicas_objeto_2 = { 'ubicacion_en_x': 50,
     'ubicacion_en_y': 25,
@@ -135,6 +169,16 @@ if __name__ == '__main__':
     'radio': 10
     }
 
+    dict_cylinder = {
+        'type': 'cylinder',
+        'location_at_x': 50, #points
+        'location_at_y': 25, #points
+        'conductivity': 0.0003, #s/m
+        'relative permittivity': 15,
+        'radius': 10 #points
+
+    }
+    list_objects = [dict_box,dict_cylinder]
     # ===============================================================================================
     # 5) agrupar toda la informacion: primero los nombres de los objetos y luego sus caracteristicas 
     
@@ -147,3 +191,8 @@ if __name__ == '__main__':
     """
    
     guarda = main(caracteristicas_modelo, parametros_simulacion, caracteristicas_forma_de_onda, lista_de_objetos)
+
+
+
+
+    #===========================================================================
