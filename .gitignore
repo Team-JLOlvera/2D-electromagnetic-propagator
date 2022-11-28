@@ -6,7 +6,7 @@ reports/
 data/
 *.txt
 *.csv
-*.npy
+#*.npy
 # packaging
 dist/
 sdist/
